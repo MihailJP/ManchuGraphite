@@ -1,0 +1,19 @@
+Graphite-enabled Manchu font
+============================
+
+(C) 2008 Daicing.com, all rights reserved.
+See LICENSE file for information.
+Modified by MihailJP
+
+Manchu script is used to write Manchu and Sibe languages. Although it is
+included in Unicode, it is still difficult to render correctly. The first
+difficulty is that the Manchu script is written vertically, and unlike Chinese
+or Japanese, the left line comes first. Another difficulty is that Manchu
+alphabets have initial, medial and final forms. Ligature handling is also
+required.
+
+This is a Graphite-enabled version of Manchu/Sibe fonts originally available
+from daicing.com. The OpenType fonts from daicing.com work well on Windows 7,
+but unfortunately not on Linux. Adding Graphite tables is one solution which
+gives the capability of intelligent contextual glyph/ligature handling for the
+various scripts.
