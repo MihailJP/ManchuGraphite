@@ -1973,9 +1973,9 @@ pass(2)
   uni1860 > uni1860_fina / Letter _;
   uni1861 > uni1861_fina / Letter _;
   uni1862 > uni1862_fina / Letter _;
-  uni1863 > uni1863_fina / Letter _;
-  uni1864 > uni1864_fina / Letter _;
-  uni1865 > uni1865_fina / Letter _;
+  uni1863_initfem > uni1863_fina / Letter _;
+  uni1864_initfem > uni1864_fina / Letter _;
+  uni1865_initfem > uni1865_fina / Letter _;
   uni1866 > uni1866_fina / Letter _;
   uni1867 > uni1867_fina / Letter _;
   uni1868 > uni1868_fina / Letter _;
@@ -1990,9 +1990,9 @@ pass(2)
   uni1871 > uni1871_fina / Letter _;
   uni1872 > uni1872_fina / Letter _;
   uni1873 > uni1873_fina / Letter _;
-  uni1874 > uni1874_fina / Letter _;
-  uni1875 > uni1875_fina / Letter _;
-  uni1876 > uni1876_fina / Letter _;
+  uni1874_isolfem > uni1874_fina / Letter _;
+  uni1875_init > uni1875_fina / Letter _;
+  uni1876_init > uni1876_fina / Letter _;
   uni1877 > uni1877_fina / Letter _;
   uni1820 > uni1820_fina / Letter Control _;
   uni1823 > uni1823_fina / Letter Control _;
@@ -2014,9 +2014,9 @@ pass(2)
   uni1860 > uni1860_fina / Letter Control _;
   uni1861 > uni1861_fina / Letter Control _;
   uni1862 > uni1862_fina / Letter Control _;
-  uni1863 > uni1863_fina / Letter Control _;
-  uni1864 > uni1864_fina / Letter Control _;
-  uni1865 > uni1865_fina / Letter Control _;
+  uni1863_initfem > uni1863_fina / Letter Control _;
+  uni1864_initfem > uni1864_fina / Letter Control _;
+  uni1865_initfem > uni1865_fina / Letter Control _;
   uni1866 > uni1866_fina / Letter Control _;
   uni1867 > uni1867_fina / Letter Control _;
   uni1868 > uni1868_fina / Letter Control _;
@@ -2031,9 +2031,9 @@ pass(2)
   uni1871 > uni1871_fina / Letter Control _;
   uni1872 > uni1872_fina / Letter Control _;
   uni1873 > uni1873_fina / Letter Control _;
-  uni1874 > uni1874_fina / Letter Control _;
-  uni1875 > uni1875_fina / Letter Control _;
-  uni1876 > uni1876_fina / Letter Control _;
+  uni1874_isolfem > uni1874_fina / Letter Control _;
+  uni1875_init > uni1875_fina / Letter Control _;
+  uni1876_init > uni1876_fina / Letter Control _;
   uni1877 > uni1877_fina / Letter Control _;
 endpass;
 
