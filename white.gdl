@@ -1885,6 +1885,23 @@ table(glyph)
 
   Letter = (Isolate, Initial, Medial, Final, U+180A);
   Control = (U+180B, U+180C, U+180D);
+
+
+  Group4 = (uni1823_medi, uni1823_fina, uni185E_fina, uni185E_medi, uni1860_fina, uni1860_medi, uni1861_fina, uni1861_medi, uni1873_fina, uni1873_medi);
+  Group5 = (uni1820_init, uni1820_medi, uni1823_init, uni1823_medi, uni185D_init, uni185D_medi, uni1860_init, uni1860_medi);
+  Group6 = (uni1820_init, uni1820_medi);
+  Group7 = (uni1860_init, uni1860_medi);
+  Group16 = (uni1828_init, uni1829_init, uni182A_init, uni182E_init, uni182F_init, uni1830_init, uni1834_init, uni1835_init, uni1836_init, uni1837_init, uni1838_init, uni183A_init, uni1862_init, uni1863_init, uni1864_init, uni1865_init, uni1866_init, uni1867_init, uni1868_initvar1, uni1869_init, uni186A_init, uni186B_init, uni186C_init, uni186D_init, uni186E_init, uni186F_init, uni1870_init, uni1871_init, uni1872_init, uni1874_init, uni1875_init, uni1876_init, uni1876_initvar1, uni1877_init);
+  Group20 = (uni1820_medi, uni1820_fina, uni1823_medi, uni1823_fina, uni185D_fina, uni185D_medi, uni185E_fina, uni185E_medi, uni185F_fina, uni185F_medi, uni1860_fina, uni1860_medi, uni1861_fina, uni1861_medi, uni1873_fina, uni1873_medi);
+  Group21 = (uni185D_fina, uni185D_medi, uni1860_fina, uni1860_medi, uni1860_finavar2, uni1861_fina, uni1861_medi);
+  Group22 = (uni1820_medi, uni1820_fina, uni1823_medi, uni1823_fina, uni1823_finavar1, uni1873_fina, uni1873_medi);
+  Group23 = (uni1868_init, uni1868_initvar1, uni1868_medi, uni1868_medivar1, uni1869_init, uni1869_initvar1, uni1869_medi, uni1869_medivar1);
+  Group24 = (uni1868_init, uni1868_medi);
+  Group25 = (uni182A185D_init, uni182A185D_medi, uni182A1861_init, uni182A1861_medi, uni183A1820_init, uni183A1820_medi, uni185D_init, uni185D_medi, uni185D_medivar1, uni1861_init, uni1861_medi, uni1864185D_init, uni1864185D_medi, uni18641860_init, uni18641860_medi, uni1865185D_init, uni1865185D_medi, uni18651860_init, uni18651860_medi, uni1866185D_init, uni1866185D_medi, uni18661861_init, uni18661861_medi, uni186C1820_init, uni186C1820_medi, uni186D1820_init, uni186D1820_medi, uni1874185D_init, uni1874185D_medi, uni18741860_init, uni18741860_medi);
+  Group26 = (uni1820_medi, uni1820_fina, uni1823_medi, uni1823_fina, uni1861_fina, uni1861_medi);
+  Group35 = (uni200D, uni180A);
+  Group36 = (uni186F_init, uni186F_medi);
+
 endtable;
 
 table(substitution)
@@ -2190,6 +2207,146 @@ pass(4)
   uni1875_init > uni1875_init / _ Control Letter;
   uni1876_init > uni1876_init / _ Control Letter;
   uni1877 > uni1877_init / _ Control Letter;
+endpass;
+
+// FVS
+pass(5)
+endpass;
+
+// Variants
+pass(6)
+
+// Lookup 4
+  uni1876_init > uni1876_initvar1 / _ Group4;
+  uni1876_medi > uni1876_medivar1 / _ Group4;
+
+// Lookup 5
+  uni185E_medi > uni1873_medivar1 / Group5 _;
+  uni1873_medi > uni1873_medivar2 / Group5 _;
+
+// Lookup 6
+  uni1820_medi > uni1820_finaalt / Group6 _;
+  uni1820_fina > uni1820_medialt / Group6 _;
+
+// Lookup 7
+  uni1860_fina > uni1860_finavar1 / Group7 _;
+  uni1860_medi > uni1860_medivar1 / Group7 _;
+
+// Lookup 16
+  uni1823_fina > uni1823_finavar1 / Group16 _;
+  uni1860_fina > uni1860_finavar2 / Group16 _;
+
+// Lookup 19
+  uni1828_fina > uni1828_finavar1 / uni185D_init _;
+
+// Lookup 20
+  uni1828_medi > uni1828_medivar1 / _ Group20;
+
+// Lookup 21
+  uni1868_initvar1 > uni1868_init / _ Group21;
+  uni1868_medivar2 > uni1868_medi / _ Group21;
+  uni1869_init > uni1869_initvar1 / _ Group21;
+  uni1869_medivar1 > uni1869_medi / _ Group21;
+
+// Lookup 22
+  uni1868_medivar2 > uni1868_medivar1 / _ Group22;
+
+// Lookup 23
+  uni185D_fina > uni185D_finavar1 / Group23 _;
+  uni185D_medi > uni185D_medivar1 / Group23 _;
+  uni1860_fina > uni1860_finavar1 / Group23 _;
+  uni1860_medi > uni1860_finavar3 / Group23 _;
+  uni1860_finavar2 > uni1860_medivar1 / Group23 _;
+
+// Lookup 24
+  uni185D_medivar1 > uni185D_medivar2 / Group24 _;
+
+// Lookup 25
+  uni1874_fina > uni1874_finafem / Group25 _;
+  uni1874_medivar1 > uni1874_medifem / Group25 _;
+
+// Lookup 26
+  uni1863_medivar1 > uni1863_medi / _ Group26;
+  uni1874_medivar1 > uni1874_medi / _ Group26;
+  uni1874_medifem > uni1874_medi / _ Group26;
+
+// Lookup 28
+  uni1865_medi uni1861_fina > uni18651861_finavar1 _ / _ _ uni180B;
+  uni1865_init uni1861_medi > uni18651861_medivar1 _ / _ _ uni180B;
+  uni1865_medi uni1861_medi > uni18651861_medivar1 _ / _ _ uni180B;
+  uni1874_init uni1861_medi > uni18741861_initvar1 _ / _ _ uni180B;
+  uni1874_medi uni1861_medi > uni18741861_medivar1 _ / _ _ uni180B;
+  uni1874_medivar1 uni1861_medi > uni18741861_medivar1 _ / _ _ uni180B;
+
+// Lookup 29
+  uni1828_medi > uni1828_medivar1 / _ uni200D uni180B;
+  uni185D_medi > uni185D_medivar1 / _ uni200D uni180B;
+  uni185E_medi > uni185E_medivar1 / _ uni200D uni180B;
+  uni1860_medi > uni1860_medivar1 / _ uni200D uni180B;
+  uni1869_init > uni1869_initvar1 / _ uni200D uni180B;
+  uni1873_medi > uni1873_medivar1 / _ uni200D uni180B;
+  uni1876_init > uni1876_initvar1 / _ uni200D uni180B;
+  uni1876_medi > uni1876_medivar1 / _ uni200D uni180B;
+  uni1828_medi > uni1828_medivar1 / _ uni180A uni180B;
+  uni185D_medi > uni185D_medivar1 / _ uni180A uni180B;
+  uni185E_medi > uni185E_medivar1 / _ uni180A uni180B;
+  uni1860_medi > uni1860_medivar1 / _ uni180A uni180B;
+  uni1869_init > uni1869_initvar1 / _ uni180A uni180B;
+  uni1873_medi > uni1873_medivar1 / _ uni180A uni180B;
+  uni1876_init > uni1876_initvar1 / _ uni180A uni180B;
+  uni1876_medi > uni1876_medivar1 / _ uni180A uni180B;
+
+// Lookup 30
+  uni1820_fina > uni1820_finavar1 / _ uni180B;
+  uni1823_fina > uni1823_finavar1 / _ uni180B;
+  uni1828_fina > uni1828_finavar1 / _ uni180B;
+  uni1828_finavar1 > uni1828_fina / _ uni180B;
+  uni185D_fina > uni185D_finavar1 / _ uni180B;
+  uni185E_fina > uni185E_finavar1 / _ uni180B;
+  uni1860_fina > uni1860_finavar1 / _ uni180B;
+  uni1873_fina > uni1873_finavar1 / _ uni180B;
+  uni1874_fina > uni1874_finafem / _ uni180B;
+
+// Lookup 31
+  uni185E_medi > uni185E_medivar2 / _ uni200D uni180C;
+  uni1868_medi > uni1868_medivar2 / _ uni200D uni180C;
+  uni1868_medivar1 > uni1868_medivar2 / _ uni200D uni180C;
+  uni1873_medi > uni1873_medivar2 / _ uni200D uni180C;
+  uni1874_medi > uni1874_medifem / _ uni200D uni180C;
+  uni185E_medi > uni185E_medivar2 / _ uni180A uni180C;
+  uni1868_medi > uni1868_medivar2 / _ uni180A uni180C;
+  uni1868_medivar1 > uni1868_medivar2 / _ uni180A uni180C;
+  uni1873_medi > uni1873_medivar2 / _ uni180A uni180C;
+  uni1874_medi > uni1874_medifem / _ uni180A uni180C;
+
+// Lookup 32
+  uni185D_fina > uni185D_finavar2 / _ uni180C;
+  uni185E_fina > uni185E_finavar2 / _ uni180C;
+  uni1860_fina > uni1860_finavar2 / _ uni180C;
+  uni1873_fina > uni1873_finavar2 / _ uni180C;
+
+// Lookup 33
+  uni1820_medi > uni1820_medialt / _ uni200D uni180D;
+  uni1873_medi > uni1873_medivar3 / _ uni200D uni180D;
+  uni1820_medi > uni1820_medialt / _ uni180A uni180D;
+  uni1873_medi > uni1873_medivar3 / _ uni180A uni180D;
+
+// Lookup 34
+  uni1820_fina > uni1820_finaalt / _ uni180D;
+  uni185D_fina > uni185D_finavar3 / _ uni180D;
+  uni1860_fina > uni1860_finavar3 / _ uni180D;
+
+// Lookup 35
+  uni1863_medivar1 > uni1863_medi / _ Group35;
+  uni1868_initvar1 > uni1868_init / _ Group35;
+  uni1868_medivar2 > uni1868_medi / _ Group35;
+  uni1869_medivar1 > uni1869_medi / _ Group35;
+  uni1874_medivar1 > uni1874_medi / _ Group35;
+
+// Lookup 36
+  uni185E_fina > uni185E_finavar2 / Group36 _;
+  uni1873_fina > uni1873_finavar2 / Group36 _;
+
 endpass;
 
 endtable;
